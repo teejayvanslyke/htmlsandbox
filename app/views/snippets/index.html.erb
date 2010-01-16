@@ -1,0 +1,11 @@
+<h2>Recent</h2>
+
+<table>
+  <% @snippets.each do |snippet| %>
+    <tr>
+      <td><%=h snippet.owner %></td>
+      <td><%=link_to h(snippet.name), edit_snippet_path(snippet) %></td>
+    </tr>
+  <% end %>
+</table>
+

@@ -1,0 +1,18 @@
+<p>
+  <b>Owner:</b>
+  <%=h @snippet.owner %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @snippet.name %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @snippet.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_snippet_path(@snippet) %> |
+<%= link_to 'Back', snippets_path %>

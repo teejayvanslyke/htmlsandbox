@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <title>HTML Sandbox</title>
+    <%= stylesheet_link_tag    'reset', 'screen' %>
+    <%= javascript_include_tag 'jquery', 'application' %>
+  </head>
+  <body>
+    <div class="container">
+      <div id="header">
+        <h1><a href="/index.html">HTML Sandbox</a> 
+        </h1>
+      </div>
+      <div id="subheader">
+        <ul id="nav">
+          <li><%= link_to 'New', new_snippet_path %></li>
+          <li><%= link_to 'Recent', snippets_path %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div id="body">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+
+</html>
