@@ -1,0 +1,22 @@
+<div class="column" id="snippet_form">
+  <% form_for(@snippet) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+    <%= f.label :owner, 'Your Name' %><br />
+    <%= f.text_field :owner %>
+    </p>
+    <p>
+    <%= f.label :name, 'Title' %><br />
+    <%= f.text_field :name %>
+    </p>
+    <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+    </p>
+    <p>
+    <%= f.submit 'Save' %>
+    </p>
+  <% end %>
+</div>
+
