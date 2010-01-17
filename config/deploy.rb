@@ -8,6 +8,7 @@ ssh_options[:forward_agent] = true
 set :use_sudo, true
 set :scm_verbose, true
 set :rails_env, "production" 
+set :user, "deploy"
 
 role :web, "pdxart440.info"
 role :app, "pdxart440.info"
@@ -15,6 +16,23 @@ role :db,  "pdxart440.info"
 server 'pdxart440.info', :app, :web
 
 namespace :deploy do
+  desc "Create the database yaml file"
+  task :after_update_code do
+    db_config = <<-EOF
+    production:    
+      adapter: mysql
+      encoding: utf8
+      username: root
+      password: 
+      database: htmlsandbox
+      host: localhost
+      port: 3306
+    EOF
+    
+    put db_config, "#{release_path}/config/database.yml"
+  
+  end
+
   task :start do
   end
   task :stop do
